@@ -1,4 +1,7 @@
-import './globals.css'
+'use client'
+import './globals.css';
+import { Provider } from 'react-redux';
+import { store } from '../store/store';
 
 export default function RootLayout({ children }) {
   return (
@@ -8,7 +11,9 @@ export default function RootLayout({ children }) {
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <Provider store={store}>
+        <body>{children}</body>
+      </Provider>
     </html>
   )
 }
