@@ -2,7 +2,7 @@
 import Navbar from '@/components/Navbar';
 import Image from 'next/image';
 import Link from 'next/link';
-import {usePathname, useRouter} from 'next/navigation';
+import {usePathname} from 'next/navigation';
 import React from 'react';
 import {useSelector} from 'react-redux';
 
