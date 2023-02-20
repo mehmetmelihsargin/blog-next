@@ -1,18 +1,18 @@
-import {auth} from '@/firebase';
-import {logout} from '@/store/auth';
-import {signOut} from 'firebase/auth';
+// import {auth} from '@/firebase';
+// import {logout} from '@/store/auth';
+// import {signOut} from 'firebase/auth';
 import Image from 'next/image';
 import React from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+// import {useDispatch, useSelector} from 'react-redux';
 import logo from '../public/logo.png';
 
 function Navbar() {
-  const {user} = useSelector(state => state.auth);
-  const dispatch = useDispatch();
-  const handleLogout = async () => {
-    await signOut(auth);
-    dispatch(logout());
-  };
+  // const {user} = useSelector(state => state.auth);
+  // const dispatch = useDispatch();
+  // const handleLogout = async () => {
+  //   await signOut(auth);
+  //   dispatch(logout());
+  // };
   return (
     <section className="w-full px-8 text-gray-700 bg-white">
       <div className="py-6 mx-auto max-w-7xl md:flex-row">
@@ -31,7 +31,7 @@ function Navbar() {
             >
               Contact
             </a>
-            <a
+            {/* <a
               href="/login"
               className="mr-5 font-semibold leading-6 text-gray-500 hover:text-gray-600"
             >
@@ -74,7 +74,7 @@ function Navbar() {
                 </svg>
                 Signup
               </div>
-            </a>
+            </a> */}
           </nav>
           <a
             href="#_"
@@ -84,12 +84,12 @@ function Navbar() {
           </a>
           <div className="inline-flex items-center ml-5 space-x-6 lg:w-2/5 lg:justify-end lg:ml-0">
             <span className="inline-flex justify-center mt-4 space-x-5 md:ml-auto md:mt-0 md:justify-start">
-              {user ? user.email : 'Çevrimdışı'}
+              {/* {user ? user.email : 'Çevrimdışı'}
               {user ? (
                 <button onClick={handleLogout}>Çıkış Yap</button>
               ) : (
                 user.email
-              )}
+              )} */}
               <a href="#" className="text-gray-400 hover:text-gray-500">
                 <span className="sr-only">Facebook</span>
                 <svg

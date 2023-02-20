@@ -1,14 +1,15 @@
 'use client'
 import Navbar from '@/components/Navbar'
 import Heros from '@/components/Heros'
-
+import { useSelector } from 'react-redux';
 
 function Page(props) {
+  const data = useSelector(state => state.posts.data)
 
   return (
     <main>
       <Navbar />
-      <Heros />
+      <Heros data={data} />
 
     </main>
 
@@ -16,18 +17,5 @@ function Page(props) {
 
 
 }
-export async function getServerSideProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-  const res = await fetch('https://fakestoreapi.com/products')
-  const posts = await res.json()
 
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
-  return {
-    props: {
-      posts
-    },
-  }
-}
 export default Page;
